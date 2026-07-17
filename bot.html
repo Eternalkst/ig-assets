@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3 шага к контент-автопилоту</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0d0f14; color:#e8eaef; font-family:'Segoe UI', Arial, sans-serif; line-height:1.55; }
+  .wrap { max-width:640px; margin:0 auto; padding:48px 22px 80px; }
+  .kicker { color:#7cf25c; text-transform:uppercase; letter-spacing:3px; font-size:13px; font-weight:700; margin-bottom:14px; }
+  h1 { font-size:34px; line-height:1.15; font-weight:800; margin-bottom:18px; }
+  h1 .acc { color:#7cf25c; }
+  .lead { color:#aeb4c0; font-size:17px; margin-bottom:36px; }
+  .step { background:#161a22; border:1px solid #232a36; border-radius:16px; padding:24px; margin-bottom:18px; }
+  .step h2 { font-size:20px; margin-bottom:10px; }
+  .step h2 span { color:#7cf25c; margin-right:8px; }
+  .step p { color:#c7cbd4; font-size:15px; margin-bottom:10px; }
+  .step p:last-child { margin-bottom:0; }
+  code, .prompt { display:block; background:#0d0f14; border:1px solid #232a36; border-radius:10px; padding:14px; font-size:13.5px; color:#9fe98a; font-family:Consolas, monospace; white-space:pre-wrap; margin-top:10px; }
+  .offer { background:linear-gradient(160deg,#16241a,#161a22); border:1px solid #2c4a30; border-radius:16px; padding:28px 24px; margin-top:36px; }
+  .offer h2 { font-size:22px; margin-bottom:12px; }
+  .offer ul { margin:14px 0 18px 20px; color:#c7cbd4; font-size:15px; }
+  .offer li { margin-bottom:8px; }
+  .price { font-size:30px; font-weight:800; color:#7cf25c; margin-bottom:8px; }
+  .cta { display:inline-block; background:#7cf25c; color:#0d0f14; font-weight:700; padding:14px 26px; border-radius:12px; text-decoration:none; font-size:16px; margin-top:8px; }
+  .foot { margin-top:44px; color:#5a6070; font-size:13px; }
+  .foot a { color:#7cf25c; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Бесплатный мини-гайд</div>
+  <h1>3 шага к блогу, который ведёт себя <span class="acc">сам</span></h1>
+  <p class="lead">Меня зовут Валерий, я таргетолог. Мой блог в Threads публикует 3 поста в день без меня: контент, расписание, аналитика — всё на автопилоте, 0 ₽ в месяц за сервисы. Вот как устроена система.</p>
+
+  <div class="step">
+    <h2><span>Шаг 1.</span> Контент-банк на месяц — за один присест</h2>
+    <p>Голый ChatGPT пишет воду, потому что не знает вашу нишу. Решение — промпт, который сначала собирает фактуру: ниша, боли клиентов, ваши цифры и кейсы, формат площадки — и только потом пишет.</p>
+    <p>Попробуйте упрощённую версию прямо сейчас (вставьте в любую нейросеть):</p>
+    <div class="prompt">Задай мне 5 вопросов по одному: 1) моя ниша и продукт; 2) кто мой клиент и его главная боль; 3) 2–3 реальные цифры или кейса из моей практики; 4) мой стиль общения; 5) что я продаю. После ответов сгенерируй 15 постов для Threads: 5 вопросов-дискуссий, 5 полезных постов с моими цифрами, 5 личных мнений. Формат: пост до 500 символов, первая строка до 100 символов — с конкретикой или цифрой, один пост — одна мысль.</div>
+  </div>
+
+  <div class="step">
+    <h2><span>Шаг 2.</span> Автопубликация — бесплатно, из облака</h2>
+    <p>У Threads есть официальный API: посты может публиковать скрипт — по расписанию, с ветками, даже когда компьютер выключен. Хостинг расписания — бесплатный (GitHub Actions), никаких платных сервисов автопостинга.</p>
+    <p>Настраивается один раз: ключ API (10 минут по инструкции) + готовый скрипт + очередь постов файликом.</p>
+  </div>
+
+  <div class="step">
+    <h2><span>Шаг 3.</span> Аналитика — раз в неделю сама</h2>
+    <p>Тот же API отдаёт просмотры, лайки, комменты и репосты. Скрипт раз в неделю собирает отчёт: какие посты залетели выше медианы — их формат масштабируем, какие провалились — убираем. Блог растёт на цифрах, а не на ощущениях.</p>
+    <p>Ваши 15 минут в день — отвечать в комментах. Это единственное, что нельзя и не нужно автоматизировать: именно живые ответы приносят клиентов.</p>
+  </div>
+
+  <div class="offer">
+    <h2>Хотите готовое — без разбирательств?</h2>
+    <p style="color:#c7cbd4; font-size:15px;">Я в этой системе разбирался долго. Вам не придётся: всё уже упаковано.</p>
+    <ul>
+      <li><b>Мега-промпт</b>, который собирает 44+ поста под вашу нишу (полная версия, с ветками и воронкой продаж)</li>
+      <li><b>Готовый бот</b>: скрипты публикации и аналитики + шаблон очереди</li>
+      <li><b>Инструкция со скринами</b>: запуск за пару часов, без технических навыков</li>
+    </ul>
+    <div class="price">1 990 ₽ <span style="font-size:15px; color:#aeb4c0; font-weight:400;">/ разово, без подписок</span></div>
+    <a class="cta" href="https://ig.me/m/prosolenko.valeriy">Написать «ХОЧУ» в директ</a>
+  </div>
+
+  <div class="foot">
+    Валерий Просоленко — таргетолог, 10 000+ заявок для бизнеса в десятках ниш.<br>
+    Threads/Instagram: <a href="https://www.instagram.com/prosolenko.valeriy">@prosolenko.valeriy</a> · Кейсы: <a href="https://prosolenkotargets.netlify.app/cases">prosolenkotargets.netlify.app/cases</a>
+  </div>
+</div>
+</body>
+</html>
