@@ -1,0 +1,88 @@
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; overflow:hidden; }
+  .slide {
+    width:1080px; height:1350px; display:none; position:relative;
+    background:#0d0f14; color:#fff;
+    font-family:'Segoe UI', Arial, sans-serif;
+    padding:90px 80px; flex-direction:column; justify-content:center;
+  }
+  .slide.active { display:flex; }
+  .kicker { font-size:34px; letter-spacing:4px; text-transform:uppercase; color:#7cf25c; font-weight:700; margin-bottom:36px; }
+  h1 { font-size:88px; line-height:1.08; font-weight:800; letter-spacing:-1px; }
+  h1 .acc { color:#7cf25c; }
+  .sub { font-size:44px; line-height:1.35; color:#c7cbd4; margin-top:44px; font-weight:400; }
+  .sub b { color:#fff; font-weight:700; }
+  .big { font-size:200px; font-weight:900; color:#7cf25c; line-height:1; letter-spacing:-4px; }
+  .footer { position:absolute; bottom:56px; left:80px; right:80px; display:flex; justify-content:space-between; font-size:30px; color:#5a6070; }
+  .num { color:#5a6070; }
+  .swipe { position:absolute; top:64px; right:80px; font-size:30px; color:#5a6070; }
+  .card { background:#161a22; border:2px solid #232a36; border-radius:28px; padding:44px 48px; margin-top:22px; font-size:42px; line-height:1.3; color:#c7cbd4; }
+  .card b { color:#7cf25c; }
+  .strike { color:#5a6070; text-decoration:line-through; }
+</style>
+
+<div class="slide" data-n="1">
+  <div class="kicker">Система, а не магия</div>
+  <h1>Мой блог ведёт <span class="acc">робот</span></h1>
+  <div class="sub">Публикует посты, ведёт ветки и присылает отчёты — пока я работаю с клиентами.<br><br><b>Листай — покажу, как это устроено →</b></div>
+  <div class="footer"><span>@prosolenko.valeriy</span><span class="num">1 / 8</span></div>
+</div>
+
+<div class="slide" data-n="2">
+  <div class="kicker">Цена ручного ведения</div>
+  <div class="big">90 часов</div>
+  <h1 style="font-size:64px; margin-top:30px;">в месяц стоит блог, который ведёшь руками</h1>
+  <div class="sub">Час на пост × 3 поста в день. СММ-щик — от 150 000 тг/мес. Сервисы — по подписке, и контент они <b>не пишут</b>.</div>
+  <div class="footer"><span>@prosolenko.valeriy</span><span class="num">2 / 8</span></div>
+</div>
+
+<div class="slide" data-n="3">
+  <div class="kicker">Ложное решение</div>
+  <h1>«Ну так ChatGPT напишет»</h1>
+  <div class="card">Пробовали. Голый GPT пишет воду: <span class="strike">«в современном мире бизнеса важно…»</span><br><br>Такие посты <b>не читает никто</b>. Дело не в нейросети — дело в системе.</div>
+  <div class="footer"><span>@prosolenko.valeriy</span><span class="num">3 / 8</span></div>
+</div>
+
+<div class="slide" data-n="4">
+  <div class="kicker">Шаг 1 — контент</div>
+  <h1>Промпт с фактурой <span class="acc">твоей ниши</span></h1>
+  <div class="sub">Боли аудитории, реальные цифры, формат площадки — промпт собирает всё за 5 вопросов.<br><br><b>Месяц контента — за 30 минут.</b></div>
+  <div class="footer"><span>@prosolenko.valeriy</span><span class="num">4 / 8</span></div>
+</div>
+
+<div class="slide" data-n="5">
+  <div class="kicker">Шаг 2 — публикация</div>
+  <h1>Бот постит <span class="acc">сам</span></h1>
+  <div class="sub">3 поста в день по расписанию. Из облака — компьютер может быть выключен. Ветки ведёт цепочкой.<br><br><b>Стоимость: 0 ₽ в месяц.</b></div>
+  <div class="footer"><span>@prosolenko.valeriy</span><span class="num">5 / 8</span></div>
+</div>
+
+<div class="slide" data-n="6">
+  <div class="kicker">Шаг 3 — аналитика</div>
+  <h1>Раз в неделю — <span class="acc">отчёт</span></h1>
+  <div class="sub">Что залетело, что нет, какой формат масштабировать. Решения принимают <b>цифры</b>, а не ощущения.</div>
+  <div class="footer"><span>@prosolenko.valeriy</span><span class="num">6 / 8</span></div>
+</div>
+
+<div class="slide" data-n="7">
+  <div class="kicker">Моя часть работы</div>
+  <div class="big">15 минут</div>
+  <h1 style="font-size:64px; margin-top:30px;">в день — на ответы в комментах</h1>
+  <div class="sub">Живое общение автоматизировать нельзя. И не нужно — <b>именно оно приносит заявки</b>. Рутину — роботу, живое — себе.</div>
+  <div class="footer"><span>@prosolenko.valeriy</span><span class="num">7 / 8</span></div>
+</div>
+
+<div class="slide" data-n="8">
+  <div class="kicker">Хочешь так же?</div>
+  <h1>Комментарий: <span class="acc">«БОТ»</span></h1>
+  <div class="sub">Пришлю первые шаги бесплатно.<br><br>Вся система разложена по шагам — включается за пару часов, без технических навыков и без подписок.</div>
+  <div class="footer"><span>@prosolenko.valeriy</span><span class="num">8 / 8</span></div>
+</div>
+
+<script>
+  var n = (location.hash || '#1').replace('#','');
+  var el = document.querySelector('.slide[data-n="' + n + '"]');
+  if (el) el.classList.add('active');
+</script>
