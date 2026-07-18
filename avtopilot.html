@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контент-автопилот — блог, который ведёт себя сам</title>
+<style>
+  :root{ --bg:#07090d; --bg2:#0d1017; --card:#12161f; --line:#1f2530; --txt:#eef1f6; --mut:#98a1b3; --acc:#7cf25c; --acc2:#4fd0e0; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--txt); font-family:'Segoe UI',system-ui,Arial,sans-serif; line-height:1.6; overflow-x:hidden; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 20px; }
+  a{ color:inherit; text-decoration:none; }
+
+  /* nav */
+  nav{ position:sticky; top:0; z-index:50; background:rgba(7,9,13,.8); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:62px; }
+  .logo{ font-weight:800; font-size:19px; letter-spacing:-.3px; }
+  .logo b{ color:var(--acc); }
+  .nav-cta{ background:var(--acc); color:#07090d; font-weight:700; padding:9px 18px; border-radius:10px; font-size:14px; transition:.2s; }
+  .nav-cta:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(124,242,92,.3); }
+
+  /* hero */
+  .hero{ position:relative; text-align:center; padding:90px 0 70px; overflow:hidden; }
+  .glow{ position:absolute; width:600px; height:600px; border-radius:50%; filter:blur(120px); opacity:.25; z-index:0; }
+  .glow.g1{ background:var(--acc); top:-200px; left:-100px; }
+  .glow.g2{ background:var(--acc2); bottom:-250px; right:-120px; opacity:.18; }
+  .hero .wrap{ position:relative; z-index:1; }
+  .badge{ display:inline-block; background:rgba(124,242,92,.1); border:1px solid rgba(124,242,92,.3); color:var(--acc); font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:8px 18px; border-radius:100px; margin-bottom:26px; }
+  h1{ font-size:clamp(34px,6vw,64px); line-height:1.05; font-weight:900; letter-spacing:-1.5px; }
+  h1 .acc{ background:linear-gradient(120deg,var(--acc),var(--acc2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero p.sub{ font-size:clamp(16px,2.2vw,20px); color:var(--mut); max-width:640px; margin:24px auto 0; }
+  .cta-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:38px; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; font-weight:800; font-size:17px; padding:16px 32px; border-radius:14px; transition:.2s; }
+  .btn.primary{ background:var(--acc); color:#07090d; box-shadow:0 10px 30px rgba(124,242,92,.25); }
+  .btn.primary:hover{ transform:translateY(-3px); box-shadow:0 16px 40px rgba(124,242,92,.4); }
+  .btn.ghost{ border:1px solid var(--line); color:var(--txt); }
+  .btn.ghost:hover{ border-color:var(--acc); }
+
+  .stats{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:56px; }
+  .stat{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 26px; min-width:150px; }
+  .stat b{ display:block; font-size:32px; font-weight:900; background:linear-gradient(120deg,var(--acc),var(--acc2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .stat span{ color:var(--mut); font-size:13px; }
+
+  /* sections */
+  section{ padding:70px 0; }
+  .sec-badge{ text-align:center; color:var(--acc); font-weight:800; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:14px; }
+  h2{ text-align:center; font-size:clamp(26px,4vw,42px); font-weight:850; line-height:1.15; letter-spacing:-.6px; }
+  .lead{ text-align:center; color:var(--mut); max-width:600px; margin:16px auto 0; font-size:17px; }
+
+  .pain{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:44px; }
+  .pain .c{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px; }
+  .pain .c .n{ font-size:40px; font-weight:900; color:#ff6b6b; }
+  .pain .c h3{ font-size:19px; margin:8px 0 6px; }
+  .pain .c p{ color:var(--mut); font-size:15px; }
+
+  .steps{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:44px; }
+  .step{ background:linear-gradient(180deg,var(--card),var(--bg2)); border:1px solid var(--line); border-radius:20px; padding:30px; position:relative; }
+  .step .num{ width:44px; height:44px; background:var(--acc); color:#07090d; font-weight:900; font-size:20px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+  .step h3{ font-size:21px; margin-bottom:10px; }
+  .step p{ color:var(--mut); font-size:15px; }
+
+  .products{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:44px; }
+  .prod{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:28px; transition:.25s; }
+  .prod:hover{ border-color:var(--acc); transform:translateY(-4px); }
+  .prod .ic{ font-size:38px; }
+  .prod h3{ font-size:20px; margin:12px 0 8px; }
+  .prod p{ color:var(--mut); font-size:15px; }
+
+  .compare{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:34px; margin-top:44px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .compare .col h3{ font-size:18px; margin-bottom:14px; }
+  .compare .them h3{ color:#ff6b6b; }
+  .compare .us h3{ color:var(--acc); }
+  .compare li{ list-style:none; padding:8px 0; color:var(--mut); font-size:15px; display:flex; gap:8px; }
+  .compare .us li b{ color:var(--txt); font-weight:600; }
+
+  .inside{ max-width:640px; margin:40px auto 0; }
+  .inside div{ display:flex; gap:14px; align-items:flex-start; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin-bottom:12px; }
+  .inside .ck{ color:var(--acc); font-weight:900; font-size:18px; flex:0 0 auto; }
+  .inside b{ font-weight:700; }
+  .inside span{ color:var(--mut); }
+
+  /* pricing */
+  .price-wrap{ max-width:560px; margin:44px auto 0; }
+  .price-card{ background:linear-gradient(160deg,#13251a,#12161f 60%); border:1px solid #2c4a30; border-radius:26px; padding:40px 32px; text-align:center; box-shadow:0 20px 60px rgba(124,242,92,.1); }
+  .timer{ display:inline-flex; gap:8px; align-items:center; background:rgba(255,107,107,.12); border:1px solid rgba(255,107,107,.3); color:#ff8a8a; font-weight:700; font-size:14px; padding:8px 16px; border-radius:100px; margin-bottom:20px; }
+  .timer #t{ font-variant-numeric:tabular-nums; }
+  .old{ color:var(--mut); text-decoration:line-through; font-size:24px; }
+  .now{ font-size:56px; font-weight:900; line-height:1; margin:6px 0; }
+  .now .acc{ color:var(--acc); }
+  .price-note{ color:var(--mut); font-size:14px; margin-bottom:22px; }
+  .tiers{ display:flex; gap:10px; justify-content:center; margin-bottom:24px; flex-wrap:wrap; }
+  .tier{ background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:12px 16px; font-size:13px; }
+  .tier b{ display:block; color:var(--acc); font-size:16px; }
+
+  .warn{ max-width:640px; margin:40px auto 0; background:rgba(180,120,20,.1); border:1px solid rgba(180,120,20,.3); color:#e0b060; border-radius:16px; padding:18px 22px; font-size:14px; text-align:center; }
+
+  footer{ border-top:1px solid var(--line); padding:40px 0; text-align:center; color:var(--mut); font-size:14px; }
+  footer a{ color:var(--acc); }
+
+  /* reveal animation */
+  .reveal{ opacity:0; transform:translateY(30px); transition:.7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:none; }
+  @keyframes float{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-10px) } }
+  .robot{ font-size:70px; display:inline-block; animation:float 3s ease-in-out infinite; margin-bottom:10px; }
+  @media(max-width:640px){ .compare{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Контент-<b>автопилот</b></div>
+    <a class="nav-cta" href="https://t.me/Avtomat_Threads_Instagram_bot">Забрать →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="wrap">
+    <div class="robot">🤖</div>
+    <div class="badge">Автоматизация блога без кода</div>
+    <h1>Твой блог ведёт<br><span class="acc">робот</span></h1>
+    <p class="sub">Посты выходят сами по расписанию, бот отвечает на комментарии, аналитика раз в неделю. Без платных сервисов, без программиста. Ты только отвечаешь тем, кто уже пришёл.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#price">Забрать за 10 000 ₸ →</a>
+      <a class="btn ghost" href="#how">Как это работает</a>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b>3–6</b><span>постов в день сам</span></div>
+      <div class="stat reveal"><b>0 ₸</b><span>за сервисы в месяц</span></div>
+      <div class="stat reveal"><b>~2 часа</b><span>на настройку по шагам</span></div>
+      <div class="stat reveal"><b>15 мин</b><span>твоего времени в день</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-badge reveal">Почему блог не растёт</div>
+    <h2 class="reveal">Вести блог руками — самая<br>дорогая привычка эксперта</h2>
+    <div class="pain">
+      <div class="c reveal"><div class="n">90ч</div><h3>времени в месяц</h3><p>Час на пост × 3 поста в день. Это сотни тысяч тенге твоего времени, которое уходит в никуда.</p></div>
+      <div class="c reveal"><div class="n">150к+</div><h3>за СММ-щика</h3><p>Наёмный человек стоит от 150 000 ₸ в месяц. И он не гарантирует, что контент вообще зайдёт.</p></div>
+      <div class="c reveal"><div class="n">0</div><h3>толку от ChatGPT</h3><p>Голый GPT пишет воду: «в современном мире важно…». Такие посты не читает никто.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2);" id="how">
+  <div class="wrap">
+    <div class="sec-badge reveal">Решение</div>
+    <h2 class="reveal">Система, которая делает<br>это за тебя</h2>
+    <p class="lead reveal">Не нейросеть-болталка, а связка: промпт с фактурой твоей ниши + бот с расписанием + аналитика. Настраивается по шагам за пару часов.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><h3>Контент под нишу</h3><p>Claude задаёт вопросы про твой бизнес и сам пишет месяц постов — с твоими реальными цифрами, а не водой.</p></div>
+      <div class="step reveal"><div class="num">2</div><h3>Публикация из облака</h3><p>Посты выходят по расписанию сами — даже когда компьютер выключен. Бесплатно, без сервисов по подписке.</p></div>
+      <div class="step reveal"><div class="num">3</div><h3>Аналитика и ответы</h3><p>Раз в неделю отчёт: что залетело. Бот отвечает на комментарии и раздаёт материалы. Твоё — 15 минут в день на живое общение.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-badge reveal">3 в 1</div>
+    <h2 class="reveal">Что внутри</h2>
+    <p class="lead reveal">Три автоматизации в одном наборе. Выбираешь, что включить первым, — остальное соберёшь, когда захочешь.</p>
+    <div class="products">
+      <div class="prod reveal"><div class="ic">📝</div><h3>Автопостинг в Threads</h3><p>Threads — единственная соцсеть, где клиенты сами пишут «ищу специалиста». Твой блог там ведётся сам.</p></div>
+      <div class="prod reveal"><div class="ic">🖼</div><h3>Автопостинг в Instagram</h3><p>Посты и карусели выходят по расписанию, пока ты занят делами. Стабильный контент без выгорания.</p></div>
+      <div class="prod reveal"><div class="ic">💬</div><h3>Бот-автоответчик</h3><p>Пишет человеку в директ, когда он оставил ключевое слово в комментах. Ловит заявки, пока ты спишь.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-badge reveal">Честное сравнение</div>
+    <h2 class="reveal">Почему это лучше<br>SaleBot и ManyChat</h2>
+    <div class="compare reveal">
+      <div class="col them">
+        <h3>❌ Платные сервисы</h3>
+        <ul>
+          <li>💸 Абонентка каждый месяц, навсегда</li>
+          <li>🔒 Перестал платить — всё выключилось</li>
+          <li>🧩 Контент всё равно пишешь сам</li>
+          <li>⛓ Ты привязан к чужой платформе</li>
+        </ul>
+      </div>
+      <div class="col us">
+        <h3>✅ Контент-автопилот</h3>
+        <ul>
+          <li><b>0 ₸/мес</b> — всё крутится в бесплатном облаке</li>
+          <li><b>Разово купил</b> — работает всегда</li>
+          <li><b>Пишет контент</b> под твою нишу сам</li>
+          <li><b>Всё твоё</b> — файлы, аккаунты, данные</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-badge reveal">В наборе</div>
+    <h2 class="reveal">Что ты получаешь</h2>
+    <div class="inside">
+      <div class="reveal"><span class="ck">✓</span><span><b>Мега-промпт</b> — Claude собирает 40+ постов под твою нишу и сам записывает в файлы</span></div>
+      <div class="reveal"><span class="ck">✓</span><span><b>Готовые боты</b> — автопостинг Threads + Instagram + бот-автоответчик комментариев</span></div>
+      <div class="reveal"><span class="ck">✓</span><span><b>Пошаговый бот-гид</b> — ведёт по настройке кнопками, от установки до запуска</span></div>
+      <div class="reveal"><span class="ck">✓</span><span><b>Инструкции со скринами</b> — даже без навыков программиста, за пару часов</span></div>
+      <div class="reveal"><span class="ck">✓</span><span><b>Аналитика</b> — раз в неделю отчёт, что залетело и что масштабировать</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <div class="sec-badge reveal">Специальная цена</div>
+    <h2 class="reveal">Забери сейчас, пока дёшево</h2>
+    <div class="price-wrap reveal">
+      <div class="price-card">
+        <div class="timer">🔥 Цена вырастет через <span id="t">30:00</span></div>
+        <div class="old">70 000 ₸</div>
+        <div class="now">сейчас <span class="acc" id="price">10 000</span> ₸</div>
+        <div class="price-note">Разово. Никаких подписок и доплат за сервисы.</div>
+        <div class="tiers">
+          <div class="tier">Сам по инструкции<b>10 000 ₸</b></div>
+          <div class="tier">С куратором под ключ<b>20 000 ₸</b></div>
+        </div>
+        <a class="btn primary" style="width:100%; justify-content:center;" href="https://t.me/Avtomat_Threads_Instagram_bot">Забрать в Telegram →</a>
+      </div>
+    </div>
+    <div class="warn reveal">🌍 Продукт рассчитан на Казахстан и страны СНГ без санкционных ограничений. В некоторых странах (например РФ) сервисы Claude, Meta и GitHub могут быть недоступны — учитывай это перед покупкой.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="robot" style="font-size:36px; animation:none;">🤖</div>
+    <p>Контент-автопилот · автоматизация блога для экспертов и бизнеса</p>
+    <p style="margin-top:10px;"><a href="https://t.me/Avtomat_Threads_Instagram_bot">Забрать в Telegram</a> · <a href="https://instagram.com/prosolenko.valeriy">@prosolenko.valeriy</a></p>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay=(i%4*70)+'ms'; io.observe(el); });
+
+  // countdown timer (30 min per visitor)
+  const KEY='ap_deadline';
+  let dl = localStorage.getItem(KEY);
+  if(!dl){ dl = Date.now()+30*60*1000; localStorage.setItem(KEY, dl); }
+  dl = +dl;
+  const tEl=document.getElementById('t'), pEl=document.getElementById('price');
+  function tick(){
+    let left = dl - Date.now();
+    if(left<=0){
+      tEl.parentElement.innerHTML='⏰ Время вышло — цена поднялась';
+      pEl.textContent='15 000';
+      return;
+    }
+    const m=Math.floor(left/60000), s=Math.floor((left%60000)/1000);
+    tEl.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+    requestAnimationFrame(()=>setTimeout(tick,500));
+  }
+  tick();
+</script>
+</body>
+</html>
