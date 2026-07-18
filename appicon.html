@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:512px; height:512px; overflow:hidden; }
+  .icon {
+    width:512px; height:512px;
+    background: radial-gradient(circle at 30% 25%, #1a3a24 0%, #0d0f14 70%);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-family:'Segoe UI', Arial, sans-serif; position:relative;
+  }
+  .mono { font-size:250px; font-weight:900; color:#7cf25c; letter-spacing:-10px; line-height:1; }
+  .dot { position:absolute; width:70px; height:70px; border-radius:50%; background:#7cf25c; opacity:0.15; }
+  .d1 { top:60px; right:70px; }
+  .d2 { bottom:80px; left:60px; width:40px; height:40px; }
+  .label { color:#c7cbd4; font-size:38px; font-weight:600; letter-spacing:4px; margin-top:8px; }
+</style>
+<div class="icon">
+  <div class="dot d1"></div>
+  <div class="dot d2"></div>
+  <div class="mono">В</div>
+  <div class="label">ТАРГЕТ</div>
+</div>
