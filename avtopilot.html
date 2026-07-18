@@ -118,6 +118,29 @@
   .tier b{ display:block; color:var(--acc); font-size:16px; }
 
   .warn{ max-width:640px; margin:40px auto 0; background:rgba(180,120,20,.1); border:1px solid rgba(180,120,20,.3); color:#e0b060; border-radius:16px; padding:18px 22px; font-size:14px; text-align:center; }
+  .plans{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:44px; align-items:stretch; }
+  .plan{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:30px 24px; display:flex; flex-direction:column; }
+  .plan.pop{ border-color:var(--acc); box-shadow:0 20px 50px rgba(124,242,92,.12); position:relative; }
+  .plan .flag{ position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--acc); color:#07090d; font-size:12px; font-weight:800; padding:4px 14px; border-radius:100px; white-space:nowrap; }
+  .plan h3{ font-size:19px; }
+  .plan .p{ font-size:34px; font-weight:900; margin:8px 0 2px; }
+  .plan .p .acc{ color:var(--acc); }
+  .plan .old{ font-size:16px; }
+  .plan ul{ list-style:none; margin:16px 0 20px; flex:1; }
+  .plan li{ padding:7px 0; color:var(--mut); font-size:14px; display:flex; gap:8px; align-items:flex-start; }
+  .plan li .ck{ color:var(--acc); font-weight:800; flex:0 0 auto; }
+  .plan .cta{ display:block; text-align:center; font-weight:800; padding:13px; border-radius:12px; font-size:15px; transition:.2s; }
+  .plan .cta.primary{ background:var(--acc); color:#07090d; }
+  .plan .cta.primary:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(124,242,92,.3); }
+  .plan .cta.ghost{ border:1px solid var(--line); color:var(--txt); }
+  .plan .cta.ghost:hover{ border-color:var(--acc); }
+  .botshot{ max-width:420px; margin:20px auto 0; }
+  .botshot .bar{ background:#17212b; color:#fff; border-radius:12px 12px 0 0; padding:10px 14px; font-size:13px; font-weight:600; display:flex; align-items:center; gap:8px; }
+  .botmsg{ background:#182533; border:1px solid #223247; border-top:none; padding:16px; font-size:14px; }
+  .botmsg .sub{ color:var(--acc); font-size:12px; margin-bottom:6px; }
+  .botmsg .btns{ margin-top:12px; display:flex; flex-direction:column; gap:6px; }
+  .botmsg .b{ background:#2b3b4e; color:#fff; text-align:center; padding:9px; border-radius:8px; font-size:13px; }
+  .botmsg .b.g{ background:var(--acc); color:#07090d; font-weight:700; }
 
   footer{ border-top:1px solid var(--line); padding:40px 0; text-align:center; color:var(--mut); font-size:14px; }
   footer a{ color:var(--acc); }
@@ -150,7 +173,7 @@
     <h1>Твой блог ведёт<br><span class="acc">робот</span></h1>
     <p class="sub">Посты выходят сами по расписанию, бот отвечает на комментарии, аналитика раз в неделю. Без платных сервисов, без программиста. Ты только отвечаешь тем, кто уже пришёл.</p>
     <div class="cta-row">
-      <a class="btn primary" href="#price">Забрать за 10 000 ₸ →</a>
+      <a class="btn primary" href="#price">Забрать от 15 000 ₸ →</a>
       <a class="btn ghost" href="#how">Как это работает</a>
     </div>
     <div class="stats">
@@ -290,19 +313,56 @@
 
 <section id="price">
   <div class="wrap">
-    <div class="sec-badge reveal">Специальная цена</div>
-    <h2 class="reveal">Забери сейчас, пока дёшево</h2>
-    <div class="price-wrap reveal">
-      <div class="price-card">
-        <div class="timer">🔥 Цена вырастет через <span id="t">30:00</span></div>
-        <div class="old">70 000 ₸</div>
-        <div class="now">сейчас <span class="acc" id="priceNum">10 000</span> ₸</div>
-        <div class="price-note">Разово. Никаких подписок и доплат за сервисы.</div>
-        <div class="tiers">
-          <div class="tier">Сам по инструкции<b>10 000 ₸</b></div>
-          <div class="tier">С куратором под ключ<b>20 000 ₸</b></div>
-        </div>
-        <a class="btn primary" style="width:100%; justify-content:center;" href="https://t.me/Avtomat_Threads_Instagram_bot">Забрать в Telegram →</a>
+    <div class="sec-badge reveal">Как выглядит процесс</div>
+    <h2 class="reveal">Тебя ведёт бот по шагам</h2>
+    <p class="lead reveal">После оплаты открывается пошаговый гид: каждый шаг — простая карточка с кнопкой «Готово». Ничего искать не надо.</p>
+    <div class="botshot reveal">
+      <div class="bar">🤖 Контент-автопилот · бот</div>
+      <div class="botmsg">
+        <div class="sub">Общий шаг 1/3</div>
+        💻 <b>Установи Claude Code</b><br>
+        <span style="color:var(--mut);">1. Скачай приложение → установи → войди<br>2. Включи режим Code</span>
+        <div class="btns"><div class="b">💻 Инструкция по установке</div><div class="b g">✅ Готово, дальше</div></div>
+      </div>
+    </div>
+
+    <div class="sec-badge reveal" style="margin-top:70px;">Выбери формат</div>
+    <h2 class="reveal">3 тарифа под тебя</h2>
+    <div class="plans">
+      <div class="plan reveal">
+        <h3>🛠 Самостоятельный</h3>
+        <div class="old" style="color:var(--mut); text-decoration:line-through;">30 000 ₸</div>
+        <div class="p"><span class="acc">15 000</span> ₸</div>
+        <ul>
+          <li><span class="ck">✓</span> Все файлы, боты и мега-промпт</li>
+          <li><span class="ck">✓</span> Пошаговый бот-гид по кнопкам</li>
+          <li><span class="ck">✓</span> Инструкции со скринами</li>
+          <li><span class="ck">✓</span> Настраиваешь сам за пару часов</li>
+        </ul>
+        <a class="cta ghost" href="https://t.me/Avtomat_Threads_Instagram_bot">Забрать →</a>
+      </div>
+      <div class="plan pop reveal">
+        <div class="flag">⭐ Выбор большинства</div>
+        <h3>🤝 Помощь куратора</h3>
+        <div class="p"><span class="acc">75 000</span> ₸</div>
+        <ul>
+          <li><span class="ck">✓</span> Всё из тарифа «Самостоятельный»</li>
+          <li><span class="ck">✓</span> Я на связи и помогаю на сложных шагах</li>
+          <li><span class="ck">✓</span> Помогаю с токенами и запуском</li>
+          <li><span class="ck">✓</span> Проверяю, что всё работает правильно</li>
+        </ul>
+        <a class="cta primary" href="https://t.me/Avtomat_Threads_Instagram_bot">Забрать →</a>
+      </div>
+      <div class="plan reveal">
+        <h3>🚀 Запуск под ключ</h3>
+        <div class="p"><span class="acc">200 000</span> ₸</div>
+        <ul>
+          <li><span class="ck">✓</span> Настраиваю всё сам под твой аккаунт</li>
+          <li><span class="ck">✓</span> Контент под твою нишу, боты, запуск</li>
+          <li><span class="ck">✓</span> Получаешь готовую работающую систему</li>
+          <li><span class="ck">✓</span> Тебе делать ничего не нужно</li>
+        </ul>
+        <a class="cta ghost" href="https://t.me/Avtomat_Threads_Instagram_bot">Обсудить →</a>
       </div>
     </div>
     <div class="warn reveal">🌍 Продукт рассчитан на Казахстан и страны СНГ без санкционных ограничений. В некоторых странах (например РФ) сервисы Claude, Meta и GitHub могут быть недоступны — учитывай это перед покупкой.</div>
@@ -328,25 +388,6 @@
   // реверсивно: появляется при входе в экран, разъезжается при выходе
   const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ e.target.classList.toggle('in', e.isIntersecting); }); }, { threshold:.12, rootMargin:'0px 0px -6% 0px' });
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  // countdown timer (30 min per visitor)
-  const KEY='ap_deadline';
-  let dl = localStorage.getItem(KEY);
-  if(!dl){ dl = Date.now()+30*60*1000; localStorage.setItem(KEY, dl); }
-  dl = +dl;
-  const tEl=document.getElementById('t'), pEl=document.getElementById('priceNum');
-  function tick(){
-    let left = dl - Date.now();
-    if(left<=0){
-      tEl.parentElement.innerHTML='⏰ Время вышло — цена поднялась';
-      pEl.textContent='15 000';
-      return;
-    }
-    const m=Math.floor(left/60000), s=Math.floor((left%60000)/1000);
-    tEl.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
-    requestAnimationFrame(()=>setTimeout(tick,500));
-  }
-  tick();
 </script>
 </body>
 </html>
