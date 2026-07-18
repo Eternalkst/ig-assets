@@ -222,7 +222,7 @@
       <div class="price-card">
         <div class="timer">🔥 Цена вырастет через <span id="t">30:00</span></div>
         <div class="old">70 000 ₸</div>
-        <div class="now">сейчас <span class="acc" id="price">10 000</span> ₸</div>
+        <div class="now">сейчас <span class="acc" id="priceNum">10 000</span> ₸</div>
         <div class="price-note">Разово. Никаких подписок и доплат за сервисы.</div>
         <div class="tiers">
           <div class="tier">Сам по инструкции<b>10 000 ₸</b></div>
@@ -254,7 +254,7 @@
   let dl = localStorage.getItem(KEY);
   if(!dl){ dl = Date.now()+30*60*1000; localStorage.setItem(KEY, dl); }
   dl = +dl;
-  const tEl=document.getElementById('t'), pEl=document.getElementById('price');
+  const tEl=document.getElementById('t'), pEl=document.getElementById('priceNum');
   function tick(){
     let left = dl - Date.now();
     if(left<=0){
