@@ -54,67 +54,38 @@
       <p>Тот же Claude, но работает <b>у тебя на компьютере, в твоей папке</b>. Сам создаёт файлы, всё настраивает.</p>
     </div>
   </div>
-  <div class="need">Для этого продукта нужен именно <b>Claude Code</b> 👇</div>
+  <div class="need">Просто скачай <b>приложение Claude</b> — в нём уже есть Claude Code 👇</div>
 
-  <div class="sec">Как установить — 4 шага</div>
+  <div class="sec">Как установить — 3 шага, только кнопки</div>
 
   <div class="card">
     <div class="n">1</div>
-    <h2>Установи Node.js</h2>
-    <p>Это «движок», на котором работает Claude Code. Открой <b>nodejs.org</b> и нажми зелёную кнопку <b>«Get Node.js»</b>. Скачается установщик — открой его и жми «Далее» до конца.</p>
-    <div class="tip">⚠️ Нужна версия <b>22 или выше</b>. Если Node уже был установлен раньше — всё равно поставь свежий с сайта, иначе Claude Code не запустится.</div>
+    <h2>Скачай приложение</h2>
+    <p>Открой <b>claude.ai/download</b> и нажми <b>«Download for Windows»</b> (для Mac — кнопка Download в разделе Desktop).</p>
     <div class="shot">
-      <img src="img/cc-node.png" alt="Сайт Node.js">
-      <div class="mark" style="left:14.5%; top:45%; width:22.5%; height:8%;"></div>
-      <div class="lbl" style="left:37.5%; top:47.5%;">👈 нажми сюда</div>
+      <img src="img/app-download.png" alt="Страница загрузки Claude">
+      <div class="mark" style="left:36.5%; top:43%; width:14%; height:8%;"></div>
+      <div class="lbl" style="left:30%; top:54%;">👆 обычная кнопка (не arm64)</div>
     </div>
-    <a class="btn" href="https://nodejs.org">Открыть Node.js</a>
+    <a class="btn" href="https://claude.ai/download">Открыть страницу загрузки</a>
   </div>
 
   <div class="card">
     <div class="n">2</div>
-    <h2>Открой терминал</h2>
-    <p><b>Windows:</b> нажми «Пуск», напиши <b>PowerShell</b>, открой.</p>
-    <p><b>Mac:</b> нажми ⌘+пробел, напиши <b>Терминал</b>, открой.</p>
-    <p>Появится чёрное (или синее) окно, куда можно печатать команды. Не пугайся 🙂</p>
+    <h2>Установи</h2>
+    <p>Открой скачанный файл и жми <b>«Далее»</b> до конца. Обычная установка, как у любой программы.</p>
+    <div class="tip">💡 Занимает пару минут. Ничего настраивать не надо.</div>
   </div>
 
   <div class="card">
     <div class="n">3</div>
-    <h2>Установи Claude Code</h2>
-    <p>Скопируй команду, вставь в терминал (правой кнопкой мыши), нажми Enter:</p>
-    <code>npm install -g @anthropic-ai/claude-code</code>
-    <div class="shot">
-      <img src="img/cc-npm.png" alt="Установка Claude Code в PowerShell">
-      <div class="mark" style="left:0.5%; top:23%; width:54%; height:11%;"></div>
-      <div class="lbl" style="left:0.5%; top:36%;">👆 вставь команду и нажми Enter</div>
-    </div>
-    <p>Подожди минуту, пока установится.</p>
+    <h2>Войди в аккаунт</h2>
+    <p>Открой приложение Claude → войди своим аккаунтом (тем, что регистрировал на claude.ai).</p>
+    <p>Всё! Приложение умеет <b>работать с твоими файлами и папками</b> — именно это нам и нужно.</p>
+    <div class="tip">💡 Дальше просто вставляешь в приложение промпты из бота — Claude сам пишет файлы и всё настраивает.</div>
   </div>
 
-  <div class="card">
-    <div class="n">4</div>
-    <h2>Запусти в своей папке</h2>
-    <p>Самый простой способ (без перетаскивания):</p>
-    <p>1. Открой папку <b>Контент-автопилот</b> в Проводнике.</p>
-    <p>2. Кликни в <b>адресную строку сверху</b> (где показан путь к папке), сотри её, напиши <b>powershell</b> и нажми Enter.</p>
-    <div class="shot">
-      <img src="img/cc-addressbar.png" alt="Адресная строка проводника">
-      <div class="mark" style="left:18.5%; top:22%; width:18.5%; height:55%;"></div>
-      <div class="lbl" style="left:38%; top:30%;">👆 напиши powershell и Enter</div>
-    </div>
-    <p>3. Терминал откроется <b>сразу в этой папке</b>. Напиши команду и Enter:</p>
-    <code>claude</code>
-    <p>При первом запуске он спросит оформление — нажми <b>Enter</b>. Потом попросит войти — откроется браузер, войди своим аккаунтом Claude.</p>
-    <div class="shot">
-      <img src="img/cc-running.png" alt="Claude Code запущен">
-      <div class="lbl" style="left:2%; top:12%;">✅ так выглядит успешный запуск</div>
-    </div>
-    <p>Всё! Теперь Claude работает в твоей папке.</p>
-    <div class="tip">💡 Дальше просто вставляешь промпты из бота — Claude Code сам пишет файлы и всё настраивает.</div>
-  </div>
-
-  <div class="tip" style="margin-top:20px;">😮‍💨 Кажется сложным? На деле это 5 минут и делается один раз. А если совсем не хочешь возиться — возьми вариант «с куратором»: настрою тебе лично под ключ.</div>
+  <div class="tip" style="margin-top:20px;">😮‍💨 Совсем не хочешь возиться? Возьми вариант <b>«с куратором»</b> — настрою тебе лично под ключ.</div>
 
   <div class="foot">Застрял? Нажми в боте «🙋 Куратор» — поможем.</div>
 </div>
