@@ -31,6 +31,10 @@
   .btn{ display:inline-block; background:var(--acc); color:#fff; font-weight:700; font-size:14px; padding:9px 16px; border-radius:10px; text-decoration:none; margin-top:4px; }
   .tip{ background:var(--accbg); color:#15803d; border-radius:12px; padding:12px 14px; font-size:13.5px; margin-top:10px; }
   .foot{ text-align:center; color:var(--mut); font-size:13px; margin-top:26px; }
+  .shot{ position:relative; margin:12px 0 4px; border-radius:12px; overflow:hidden; border:1px solid var(--line); line-height:0; }
+  .shot img{ width:100%; display:block; }
+  .mark{ position:absolute; border:3px solid #ef4444; border-radius:8px; box-shadow:0 0 0 4px rgba(239,68,68,.22); }
+  .lbl{ position:absolute; background:#ef4444; color:#fff; font-size:11px; font-weight:700; padding:3px 8px; border-radius:6px; white-space:nowrap; line-height:1.2; }
 </style>
 </head>
 <body>
@@ -57,8 +61,13 @@
   <div class="card">
     <div class="n">1</div>
     <h2>Установи Node.js</h2>
-    <p>Это «движок», на котором работает Claude Code. Открой <b>nodejs.org</b>, скачай версию <b>LTS</b>, установи (жми «Далее» до конца).</p>
-    <a class="btn" href="https://nodejs.org">Скачать Node.js</a>
+    <p>Это «движок», на котором работает Claude Code. Открой <b>nodejs.org</b> и нажми зелёную кнопку <b>«Get Node.js»</b>. Скачается установщик — открой его и жми «Далее» до конца.</p>
+    <div class="shot">
+      <img src="img/cc-node.png" alt="Сайт Node.js">
+      <div class="mark" style="left:14.5%; top:45%; width:22.5%; height:8%;"></div>
+      <div class="lbl" style="left:37.5%; top:47.5%;">👈 нажми сюда</div>
+    </div>
+    <a class="btn" href="https://nodejs.org">Открыть Node.js</a>
   </div>
 
   <div class="card">
@@ -72,8 +81,13 @@
   <div class="card">
     <div class="n">3</div>
     <h2>Установи Claude Code</h2>
-    <p>Скопируй команду, вставь в терминал, нажми Enter:</p>
+    <p>Скопируй команду, вставь в терминал (правой кнопкой мыши), нажми Enter:</p>
     <code>npm install -g @anthropic-ai/claude-code</code>
+    <div class="shot">
+      <img src="img/cc-npm.png" alt="Установка Claude Code в PowerShell">
+      <div class="mark" style="left:0.5%; top:23%; width:54%; height:11%;"></div>
+      <div class="lbl" style="left:0.5%; top:36%;">👆 вставь команду и нажми Enter</div>
+    </div>
     <p>Подожди минуту, пока установится.</p>
   </div>
 
