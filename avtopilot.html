@@ -66,6 +66,30 @@
   .prod .ic{ font-size:38px; }
   .prod h3{ font-size:20px; margin:12px 0 8px; }
   .prod p{ color:var(--mut); font-size:15px; }
+  .prod .tag{ display:inline-block; margin-top:10px; background:rgba(124,242,92,.12); color:var(--acc); font-size:12px; font-weight:700; padding:4px 10px; border-radius:100px; }
+
+  /* для кого */
+  .who{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:44px; }
+  .who .c{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; }
+  .who .c .ic{ font-size:34px; }
+  .who .c h3{ font-size:18px; margin:10px 0 6px; }
+  .who .c p{ color:var(--mut); font-size:14px; }
+
+  /* примеры */
+  .ex{ margin-top:44px; }
+  .ex .row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  .ex .block h3{ font-size:19px; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+  .thread-post{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin-bottom:12px; font-size:14.5px; }
+  .thread-post .top{ display:flex; align-items:center; gap:8px; margin-bottom:8px; color:var(--mut); font-size:12px; }
+  .thread-post .av{ width:26px; height:26px; border-radius:50%; background:linear-gradient(120deg,var(--acc),var(--acc2)); }
+  .thread-post .st{ display:flex; gap:16px; color:var(--mut); font-size:12px; margin-top:10px; }
+  .carousel-strip{ display:flex; gap:8px; overflow-x:auto; padding-bottom:8px; scroll-snap-type:x mandatory; }
+  .carousel-strip img{ height:280px; border-radius:14px; border:1px solid var(--line); flex:0 0 auto; scroll-snap-align:start; }
+  .dm{ background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+  .dm .msg{ max-width:80%; padding:10px 14px; border-radius:14px; font-size:14px; margin-bottom:10px; }
+  .dm .in{ background:var(--bg2); border:1px solid var(--line); }
+  .dm .out{ background:rgba(124,242,92,.15); border:1px solid rgba(124,242,92,.3); margin-left:auto; }
+  .dm .btn-mock{ display:inline-block; background:var(--acc); color:#07090d; font-weight:700; font-size:12px; padding:6px 12px; border-radius:8px; margin-top:4px; }
 
   .compare{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:34px; margin-top:44px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
   .compare .col h3{ font-size:18px; margin-bottom:14px; }
@@ -166,9 +190,56 @@
     <h2 class="reveal">Что внутри</h2>
     <p class="lead reveal">Три автоматизации в одном наборе. Выбираешь, что включить первым, — остальное соберёшь, когда захочешь.</p>
     <div class="products">
-      <div class="prod reveal"><div class="ic">📝</div><h3>Автопостинг в Threads</h3><p>Threads — единственная соцсеть, где клиенты сами пишут «ищу специалиста». Твой блог там ведётся сам.</p></div>
-      <div class="prod reveal"><div class="ic">🖼</div><h3>Автопостинг в Instagram</h3><p>Посты и карусели выходят по расписанию, пока ты занят делами. Стабильный контент без выгорания.</p></div>
-      <div class="prod reveal"><div class="ic">💬</div><h3>Бот-автоответчик</h3><p>Пишет человеку в директ, когда он оставил ключевое слово в комментах. Ловит заявки, пока ты спишь.</p></div>
+      <div class="prod reveal"><div class="ic">📝</div><h3>Автопостинг в Threads</h3><p>Посты и ветки выходят сами по расписанию. Threads — соцсеть, где клиенты сами пишут «ищу специалиста».</p><span class="tag">посты + ветки</span></div>
+      <div class="prod reveal"><div class="ic">🖼</div><h3>Карусели в Instagram</h3><p>Не просто текст — полноценные <b>карусели</b> создаются и публикуются автоматически. Красивые слайды под твою тему, без дизайнера.</p><span class="tag">авто-карусели</span></div>
+      <div class="prod reveal"><div class="ic">💬</div><h3>Бот-автоответчик</h3><p>Реагирует на ключевое слово в комментах, проверяет подписку и сам шлёт материал в директ. Ловит заявки, пока ты спишь.</p><span class="tag">директ + подписка</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="sec-badge reveal">Кому подойдёт</div>
+    <h2 class="reveal">Для кого это</h2>
+    <p class="lead reveal">Если ты продаёшь себя или свои услуги через соцсети, но нет времени и сил вести блог — это для тебя.</p>
+    <div class="who">
+      <div class="c reveal"><div class="ic">🧠</div><h3>Эксперты и коучи</h3><p>Психологи, нутрициологи, наставники. Контент идёт сам, а ты ведёшь клиентов, а не пишешь посты.</p></div>
+      <div class="c reveal"><div class="ic">💻</div><h3>Фрилансеры и специалисты</h3><p>Таргетологи, дизайнеры, копирайтеры. Блог как источник заказов — без выгорания и «надо запостить».</p></div>
+      <div class="c reveal"><div class="ic">🏪</div><h3>Малый и локальный бизнес</h3><p>Салоны, услуги, магазины. Стабильный поток клиентов из соцсетей на автомате, без СММ-щика.</p></div>
+      <div class="c reveal"><div class="ic">📣</div><h3>Маркетологи и SMM</h3><p>Веди себя и своих клиентов одним набором. Можно перепродавать настройку как услугу.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-badge reveal">Как это выглядит</div>
+    <h2 class="reveal">Примеры работы</h2>
+    <div class="ex">
+      <div class="row">
+        <div class="block reveal">
+          <h3>📝 Посты в Threads</h3>
+          <div class="thread-post"><div class="top"><div class="av"></div><span>твой блог · сейчас</span></div>Отдал за рекламу 200 000 тенге. Получил 3 заявки. Знакомо?<div class="st">💬 47 &nbsp; ❤ 128 &nbsp; 🔁 12</div></div>
+          <div class="thread-post"><div class="top"><div class="av"></div><span>твой блог · сейчас</span></div>Мой блог ведёт робот. Пока я занят — он сам публикует посты по расписанию.<div class="st">💬 63 &nbsp; ❤ 210 &nbsp; 🔁 34</div></div>
+          <p style="color:var(--mut); font-size:13px;">Claude пишет посты под твою нишу и сам публикует по расписанию.</p>
+        </div>
+        <div class="block reveal">
+          <h3>🖼 Карусели в Instagram</h3>
+          <div class="carousel-strip">
+            <img src="c01-1.png" alt="карусель"><img src="c03-4.png" alt="карусель"><img src="c10-1.png" alt="карусель"><img src="c06-1.png" alt="карусель">
+          </div>
+          <p style="color:var(--mut); font-size:13px;">Такие слайды создаются автоматически под твою тему и выходят по расписанию. Без дизайнера.</p>
+        </div>
+      </div>
+      <div class="block reveal" style="margin-top:24px;">
+        <h3>💬 Бот в директе (с проверкой подписки)</h3>
+        <div class="dm" style="max-width:460px;">
+          <div class="msg in">🎁 Чтобы забрать материал — подпишись 👇<br><span class="btn-mock">➕ Подписаться</span> <span class="btn-mock">✅ Я подписался</span></div>
+          <div class="msg out">✅ Я подписался</div>
+          <div class="msg in">🔥 Готово! Спасибо за подписку. Держи 👇<br><span class="btn-mock">🎁 Забрать</span></div>
+        </div>
+        <p style="color:var(--mut); font-size:13px; margin-top:10px;">Человек пишет ключевое слово в комментах → бот сам ведёт его в директ, проверяет подписку и отдаёт материал. Ни одной упущенной заявки.</p>
+      </div>
     </div>
   </div>
 </section>
