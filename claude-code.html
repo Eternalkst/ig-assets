@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code — что это и как установить</title>
+<style>
+  :root{ --bg:#f4f6f8; --card:#fff; --ink:#141821; --mut:#6b7480; --acc:#16a34a; --accbg:#eafbf0; --line:#e6e9ee; --warn:#b45309; --warnbg:#fef3c7; --code:#0b0d12; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Segoe UI',system-ui,Arial,sans-serif; line-height:1.55; }
+  .page{ max-width:560px; margin:0 auto; padding:26px 16px 70px; }
+  .h{ text-align:center; margin-bottom:20px; }
+  .h .em{ font-size:42px; }
+  h1{ font-size:24px; font-weight:800; margin:8px 0 6px; }
+  .h p{ color:var(--mut); font-size:15px; }
+  .vs{ display:flex; gap:10px; margin-bottom:8px; }
+  .vs .col{ flex:1; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+  .vs .col h3{ font-size:15px; margin-bottom:6px; }
+  .vs .col p{ font-size:13px; color:var(--mut); }
+  .vs .a{ border-color:#cdeed6; background:var(--accbg); }
+  .vs .a h3{ color:var(--acc); }
+  .need{ text-align:center; font-size:15px; font-weight:700; margin:14px 0 24px; }
+  .need b{ color:var(--acc); }
+  .sec{ font-size:13px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--acc); margin:4px 0 12px; }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; margin-bottom:14px; box-shadow:0 3px 14px rgba(20,24,33,.04); position:relative; }
+  .card .n{ position:absolute; top:-13px; left:20px; width:30px; height:30px; background:var(--acc); color:#fff; border-radius:9px; display:flex; align-items:center; justify-content:center; font-weight:800; }
+  .card h2{ font-size:18px; font-weight:750; margin:6px 0 10px; }
+  .card p{ font-size:15px; margin-bottom:8px; }
+  .card b{ font-weight:700; }
+  code{ display:block; background:var(--code); color:#9fe98a; border-radius:10px; padding:12px 14px; font-family:Consolas,monospace; font-size:14px; margin:8px 0; word-break:break-all; }
+  .btn{ display:inline-block; background:var(--acc); color:#fff; font-weight:700; font-size:14px; padding:9px 16px; border-radius:10px; text-decoration:none; margin-top:4px; }
+  .tip{ background:var(--accbg); color:#15803d; border-radius:12px; padding:12px 14px; font-size:13.5px; margin-top:10px; }
+  .foot{ text-align:center; color:var(--mut); font-size:13px; margin-top:26px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="h">
+    <div class="em">💻</div>
+    <h1>Claude и Claude Code — в чём разница</h1>
+  </div>
+
+  <div class="vs">
+    <div class="col">
+      <h3>💬 Claude</h3>
+      <p>Обычный чат в браузере (claude.ai). Отвечает текстом. В твои файлы <b>залезть не может</b>.</p>
+    </div>
+    <div class="col a">
+      <h3>💻 Claude Code</h3>
+      <p>Тот же Claude, но работает <b>у тебя на компьютере, в твоей папке</b>. Сам создаёт файлы, всё настраивает.</p>
+    </div>
+  </div>
+  <div class="need">Для этого продукта нужен именно <b>Claude Code</b> 👇</div>
+
+  <div class="sec">Как установить — 4 шага</div>
+
+  <div class="card">
+    <div class="n">1</div>
+    <h2>Установи Node.js</h2>
+    <p>Это «движок», на котором работает Claude Code. Открой <b>nodejs.org</b>, скачай версию <b>LTS</b>, установи (жми «Далее» до конца).</p>
+    <a class="btn" href="https://nodejs.org">Скачать Node.js</a>
+  </div>
+
+  <div class="card">
+    <div class="n">2</div>
+    <h2>Открой терминал</h2>
+    <p><b>Windows:</b> нажми «Пуск», напиши <b>PowerShell</b>, открой.</p>
+    <p><b>Mac:</b> нажми ⌘+пробел, напиши <b>Терминал</b>, открой.</p>
+    <p>Появится чёрное (или синее) окно, куда можно печатать команды. Не пугайся 🙂</p>
+  </div>
+
+  <div class="card">
+    <div class="n">3</div>
+    <h2>Установи Claude Code</h2>
+    <p>Скопируй команду, вставь в терминал, нажми Enter:</p>
+    <code>npm install -g @anthropic-ai/claude-code</code>
+    <p>Подожди минуту, пока установится.</p>
+  </div>
+
+  <div class="card">
+    <div class="n">4</div>
+    <h2>Запусти в своей папке</h2>
+    <p>Перетащи скачанную папку «Контент-автопилот» прямо в окно терминала (адрес подставится сам), поставь впереди <b>cd</b> и пробел, нажми Enter. Затем напиши:</p>
+    <code>claude</code>
+    <p>Нажми Enter → войди своим аккаунтом Claude. Всё! Теперь Claude работает в твоей папке.</p>
+    <div class="tip">💡 Дальше просто вставляешь промпты из бота — Claude Code сам пишет файлы и всё настраивает.</div>
+  </div>
+
+  <div class="tip" style="margin-top:20px;">😮‍💨 Кажется сложным? На деле это 5 минут и делается один раз. А если совсем не хочешь возиться — возьми вариант «с куратором»: настрою тебе лично под ключ.</div>
+
+  <div class="foot">Застрял? Нажми в боте «🙋 Куратор» — поможем.</div>
+</div>
+</body>
+</html>
