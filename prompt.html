@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Промпт «40 постов за раз»</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f4f5f7; color:#15171a; line-height:1.55; padding:20px 16px 60px; }
+  .wrap { max-width:640px; margin:0 auto; }
+  .badge { display:inline-block; background:#111; color:#fff; font-size:12px; font-weight:700; letter-spacing:.5px; padding:6px 12px; border-radius:100px; margin-bottom:16px; }
+  h1 { font-size:26px; line-height:1.2; font-weight:800; margin-bottom:10px; }
+  .sub { font-size:15px; color:#555; margin-bottom:22px; }
+  .steps { background:#fff; border-radius:16px; padding:18px 18px 6px; box-shadow:0 2px 14px rgba(0,0,0,.05); margin-bottom:20px; }
+  .steps li { list-style:none; display:flex; gap:12px; margin-bottom:14px; font-size:14.5px; }
+  .steps .n { flex:0 0 26px; height:26px; background:#111; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; }
+  .card { background:#0f1115; border-radius:16px; padding:18px; position:relative; box-shadow:0 8px 30px rgba(0,0,0,.15); }
+  .card .lbl { color:#8b90a0; font-size:12px; font-weight:600; letter-spacing:.5px; text-transform:uppercase; margin-bottom:12px; }
+  pre { color:#e7e9ee; font-size:13px; line-height:1.5; white-space:pre-wrap; word-wrap:break-word; font-family:'SF Mono',Menlo,Consolas,monospace; max-height:340px; overflow-y:auto; }
+  .copy { position:absolute; top:14px; right:14px; background:#fff; color:#111; border:none; border-radius:10px; padding:9px 15px; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.2); }
+  .copy:active { transform:scale(.95); }
+  .copy.done { background:#22c55e; color:#fff; }
+  .big-copy { display:block; width:100%; margin-top:14px; background:#111; color:#fff; border:none; border-radius:14px; padding:16px; font-size:16px; font-weight:800; cursor:pointer; }
+  .big-copy:active { transform:scale(.98); }
+  .up { margin-top:34px; background:linear-gradient(135deg,#111,#2b2f3a); border-radius:18px; padding:26px 22px; text-align:center; color:#fff; }
+  .up h2 { font-size:20px; font-weight:800; margin-bottom:10px; }
+  .up p { font-size:14.5px; color:#c7cbd4; margin-bottom:18px; }
+  .up a { display:inline-block; background:#fff; color:#111; text-decoration:none; font-weight:800; font-size:16px; padding:15px 26px; border-radius:100px; }
+  .foot { text-align:center; color:#9aa0ad; font-size:12px; margin-top:26px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="badge">🎁 БЕСПЛАТНЫЙ ПРОМПТ</div>
+  <h1>Промпт, который собирает<br>40 постов под твою нишу за раз</h1>
+  <p class="sub">Вставь его в Claude или ChatGPT — он задаст пару вопросов про твой бизнес и выдаст готовую очередь постов живым языком, с твоими цифрами. Без «инфоцыганщины».</p>
+
+  <ol class="steps">
+    <li><span class="n">1</span><span>Открой <b>Claude</b> (claude.ai) или ChatGPT — подойдёт даже бесплатная версия.</span></li>
+    <li><span class="n">2</span><span>Нажми <b>«Скопировать промпт»</b> ниже и вставь его в чат.</span></li>
+    <li><span class="n">3</span><span>Отвечай на вопросы своими словами (можно голосом). В конце получишь 40 постов.</span></li>
+  </ol>
+
+  <div class="card">
+    <div class="lbl">Промпт</div>
+    <button class="copy" id="copyTop">Копировать</button>
+    <pre id="prompt">Ты — мой личный контент-стратег и копирайтер. Помоги собрать очередь постов под мою нишу. Действуй строго по шагам, не перескакивай.
+
+ЭТАП 1. Интервью. Задай мне эти вопросы ПО ОДНОМУ, дожидаясь ответа, и переспроси, если ответ размытый:
+1. Чем ты занимаешься? (ниша, продукт/услуга, город)
+2. Кто твой клиент и его главная боль?
+3. Дай 2–3 реальные цифры или мини-кейса из практики (сколько заявок, за какой бюджет, результат). Без выдумок — только правда.
+4. Как ты общаешься: строго-экспертно или по-свойски? Приведи 1–2 свои фразы.
+5. Что ты продаёшь и по каким ценам?
+6. В какой валюте показывать суммы?
+7. Площадка: Threads, Instagram или обе?
+
+ЭТАП 2. Стратегия. Кратко (5–7 строк): кто моя аудитория, какие 4–5 типов постов чередуем, в какой пропорции, сколько постов в день для старта.
+
+ЭТАП 3. Сгенерируй 40 постов. Требования к каждому:
+— пост ≤ 500 символов; первая строка ≤ 100 символов, с конкретикой, цифрой или вопросом;
+— одна мысль = один пост; живой человеческий язык, без канцелярита;
+— используй МОИ реальные цифры из этапа 1, не выдумывай; суммы — в моей валюте.
+Состав: 12 вопросов-вовлечений, 10 кейсов/разборов с цифрами, 8 шпаргалок/пользы, 6 личных историй, 4 продающих (мягко, с оффером). В конце — 4 поста-воронки на мой продукт/услугу.
+
+Формат каждого поста:
+##### 001 Короткое-название
+Текст поста.
+
+Начни с ЭТАПА 1, первый вопрос — прямо сейчас.</pre>
+    <button class="big-copy" id="copyBig">📋 Скопировать промпт</button>
+  </div>
+
+  <div class="up">
+    <h2>А хочешь, чтобы посты сами выходили каждый день?</h2>
+    <p>Промпт даёт тебе контент. «Контент-автопилот» ставит его на автомат: посты и карусели публикуются сами в Threads и Instagram, а бот в комментах приводит клиентов в директ — без твоего участия.</p>
+    <a href="avtopilot.html">🚀 Получить полную автоматизацию →</a>
+  </div>
+
+  <p class="foot">@prosolenko.valeriy · контент-автопилот</p>
+</div>
+
+<script>
+  function copyPrompt(btn, label){
+    const txt = document.getElementById('prompt').innerText;
+    navigator.clipboard.writeText(txt).then(()=>{
+      const old = btn.textContent; btn.textContent = '✓ Скопировано'; btn.classList.add('done');
+      setTimeout(()=>{ btn.textContent = old; btn.classList.remove('done'); }, 1800);
+    });
+  }
+  document.getElementById('copyTop').addEventListener('click', function(){ copyPrompt(this); });
+  document.getElementById('copyBig').addEventListener('click', function(){ copyPrompt(this); });
+</script>
+</body>
+</html>
