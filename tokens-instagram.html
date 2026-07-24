@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ключ доступа для INSTAGRAM</title>
+<style>
+  :root{ --bg:#f4f6f8; --card:#fff; --ink:#141821; --mut:#6b7480; --acc:#16a34a; --accbg:#eafbf0; --line:#e6e9ee; --warn:#b45309; --warnbg:#fef3c7; --brand:#a21caf; --brandbg:#fae8ff; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:'Segoe UI',system-ui,Arial,sans-serif; line-height:1.55; }
+  .page{ max-width:560px; margin:0 auto; padding:26px 16px 70px; }
+  .h{ text-align:center; margin-bottom:22px; }
+  .h .em{ font-size:44px; }
+  h1{ font-size:26px; font-weight:800; margin:8px 0 6px; }
+  .h p{ color:var(--mut); font-size:15px; }
+  .badge{ display:inline-block; background:var(--brandbg); color:var(--brand); border-radius:999px; padding:5px 14px; font-size:13px; font-weight:800; letter-spacing:.4px; }
+  .warn{ background:var(--warnbg); color:var(--warn); border-radius:14px; padding:14px 16px; font-size:14px; margin-bottom:20px; font-weight:600; }
+  .card{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px; margin-bottom:16px; box-shadow:0 3px 14px rgba(20,24,33,.04); position:relative; }
+  .card .n{ position:absolute; top:-13px; left:20px; width:30px; height:30px; background:var(--acc); color:#fff; border-radius:9px; display:flex; align-items:center; justify-content:center; font-weight:800; }
+  .card h2{ font-size:19px; font-weight:750; margin:8px 0 12px; }
+  .card p{ font-size:15px; margin-bottom:9px; }
+  .card b{ font-weight:700; }
+  .pill{ display:inline-block; background:var(--accbg); color:var(--acc); border-radius:7px; padding:2px 8px; font-weight:700; font-size:14px; }
+  .btn{ display:inline-block; background:var(--acc); color:#fff; font-weight:700; font-size:14px; padding:10px 18px; border-radius:10px; text-decoration:none; margin-top:6px; }
+  .tip{ background:var(--accbg); color:#15803d; border-radius:12px; padding:12px 14px; font-size:13.5px; margin-top:10px; }
+  .scope{ background:#0f172a; color:#e2e8f0; border-radius:10px; padding:12px 14px; font-family:Consolas,'Courier New',monospace; font-size:13.5px; margin:10px 0; line-height:1.9; }
+  .scope span{ display:block; }
+  .no{ background:#fef2f2; color:#b91c1c; border-radius:12px; padding:12px 14px; font-size:13.5px; margin-top:10px; font-weight:600; }
+  .foot{ text-align:center; color:var(--mut); font-size:13px; margin-top:26px; }
+  .foot a{ color:var(--acc); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="h">
+    <div class="em">📸</div>
+    <div class="badge">ИНСТРУКЦИЯ ДЛЯ INSTAGRAM</div>
+    <h1>Получи ключ доступа</h1>
+    <p>Ключ (токен) разрешает боту публиковать в Instagram от твоего имени. Один раз, ~15 минут.</p>
+  </div>
+
+  <div class="warn">📸 Эта инструкция <b>только для Instagram</b>. Для Threads — отдельная страница, там другое приложение и другие разрешения. Не смешивай.</div>
+
+  <div class="warn">⚠️ Аккаунт Instagram обязан быть <b>профессиональным</b> (Бизнес или Автор) и <b>открытым</b>. Переключить: Instagram → Настройки → Тип аккаунта.</div>
+
+  <div class="card">
+    <div class="n">1</div>
+    <h2>Создай приложение Meta</h2>
+    <p>Зайди на <b>developers.facebook.com</b> → войди через свой Facebook/Instagram.</p>
+    <p>Нажми <span class="pill">Создать приложение</span>.</p>
+    <p>В шаге «Сценарий использования» выбери <span class="pill">Управление сообщениями и контентом в Instagram</span>.</p>
+    <div class="no">🚫 НЕ выбирай «Доступ к API Threads» — это для другой инструкции.</div>
+    <p style="margin-top:10px">Имя — любое, например <b>myautopilot</b>. Бизнес-портфолио — пропусти. Нажми «Создать».</p>
+    <a class="btn" href="https://developers.facebook.com/apps/" target="_blank" rel="noopener">Открыть Meta для разработчиков →</a>
+  </div>
+
+  <div class="card">
+    <div class="n">2</div>
+    <h2>Добавь себя тестировщиком</h2>
+    <p>Слева внизу: <span class="pill">Роли в приложении</span> → <span class="pill">Роли</span> → <b>Добавить людей</b>.</p>
+    <p>Выбери роль <b>Instagram Tester</b> (Тестировщик Instagram), впиши свой ник в Instagram, отправь.</p>
+    <p>Теперь прими приглашение — <b>в приложении Instagram</b>:</p>
+    <p>Instagram → <b>Настройки</b> → <b>Разрешения для сайтов</b> (Website permissions) → <b>Приглашения тестировщиков</b> → Принять.</p>
+    <div class="tip">💡 В некоторых версиях приложения путь другой: <b>Настройки → Для профессионалов → Приглашения тестировщиков</b>. Если не находишь — ищи по слову «тестировщик» в поиске настроек.</div>
+  </div>
+
+  <div class="card">
+    <div class="n">3</div>
+    <h2>Включи нужные разрешения</h2>
+    <p>Слева: <span class="pill">Сценарии использования</span> → открой свой → <b>Разрешения и функции</b>.</p>
+    <p>Нажми «Добавить» рядом с этими (для автопостинга и каруселей):</p>
+    <div class="scope">
+      <span>instagram_business_basic</span>
+      <span>instagram_business_content_publish</span>
+    </div>
+    <p>Если ставишь ещё и <b>бота комментариев</b>, добавь сверху:</p>
+    <div class="scope">
+      <span>instagram_business_manage_comments</span>
+    </div>
+    <p>Если бот должен отвечать ещё и <b>в директ</b>:</p>
+    <div class="scope">
+      <span>instagram_business_manage_messages</span>
+    </div>
+    <div class="tip">💡 Все разрешения Instagram начинаются со слов <b>instagram_business_</b>. Если видишь <b>threads_</b> — ты не в том приложении.</div>
+  </div>
+
+  <div class="card">
+    <div class="n">4</div>
+    <h2>Сгенерируй токен</h2>
+    <p>В том же сценарии → вкладка <span class="pill">Настройки</span> → блок <b>«Генератор токенов доступа»</b>.</p>
+    <p>Напротив своего аккаунта Instagram нажми <span class="pill">Сгенерировать токен</span>, подтверди вход.</p>
+    <p>Скопируй длинную строку — это твой ключ.</p>
+    <div class="tip">🔒 Ключ — как пароль от аккаунта. Никому не показывай и не выкладывай в интернет.</div>
+  </div>
+
+  <div class="card">
+    <div class="n">5</div>
+    <h2>Вставь ключ в файл</h2>
+    <p>В скачанной папке открой <b>боты/instagram</b>, создай файл <b>token.txt</b> и вставь туда ключ одной строкой. Сохрани.</p>
+    <p>Всё! Возвращайся в бот и жми <b>«Готово»</b> — переходим к запуску.</p>
+  </div>
+
+  <div class="warn">🌍 Продукт рассчитан на Казахстан и страны СНГ без санкционных ограничений. В некоторых странах (напр. РФ) сервисы Meta и Claude недоступны — учитывай это.</div>
+
+  <div class="foot">
+    Нужен ключ для Threads? <a href="tokens-threads.html">Открой инструкцию для Threads →</a><br><br>
+    Застрял? Нажми в боте «🙋 Куратор» — поможем.
+  </div>
+</div>
+</body>
+</html>
