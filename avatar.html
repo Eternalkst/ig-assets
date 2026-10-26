@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контент на автопилоте · полный пошаговый план</title>
+<meta name="description" content="Как устроены рилсы без съёмки: цифровой двойник, ваш голос, монтаж, подтверждение в Telegram и автопубликация в Instagram — полностью, с сервисами, ценами и настройкой.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0B0805; --card: #15100A; --line: #3A2C16; --txt: #F6EFE2; --mut: #B9AC93; --gold: #F3D27E; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--txt); font-family: 'Manrope', system-ui, sans-serif; line-height: 1.6; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 18px 80px; }
+  .hero { text-align: center; padding: 54px 0 26px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 999px; border: 1px solid rgba(243,210,126,.45); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+  .pill i { width: 9px; height: 9px; border-radius: 50%; background: #FF4D4D; }
+  h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(30px, 7vw, 44px); line-height: 1.08; margin-top: 18px; }
+  h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 24px; margin: 40px 0 6px; }
+  .gold { background: linear-gradient(100deg, #8A5F22, #C9973F 22%, #F7DC94 45%, #FFF6DA 52%, #F7DC94 60%, #C9973F 80%, #8A5F22); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: var(--mut); font-size: 17px; margin-top: 14px; }
+  .flow { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 22px; font-size: 13px; font-weight: 800; }
+  .flow span { padding: 6px 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); }
+  .muted { color: var(--mut); }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14.5px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--gold); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+  td b { color: var(--txt); }
+  td { color: var(--mut); }
+  .total { margin-top: 12px; padding: 14px 16px; border-radius: 14px; background: var(--card); border: 1px solid #5A4318; font-weight: 800; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px 22px; margin-top: 18px; position: relative; }
+  .n { position: absolute; top: -13px; left: 20px; min-width: 32px; height: 32px; padding: 0 8px; border-radius: 10px; background: linear-gradient(180deg, #F7DC94, #D9A94E); color: #1E1609; font-weight: 900; display: grid; place-items: center; }
+  .step h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 19px; margin: 6px 0 8px; }
+  .step p, .step li { color: var(--mut); font-size: 15px; }
+  .step b, .step code { color: var(--txt); }
+  .step ol, .step ul { padding-left: 20px; margin-top: 6px; }
+  .step li { margin-top: 4px; }
+  code { background: #221909; padding: 1px 6px; border-radius: 6px; font-size: 13.5px; }
+  .tag { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 800; color: var(--gold); }
+  .note { margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: #2A1508; border: 1px solid #5A2A12; color: #F2C9A8; font-size: 14px; }
+  .warn { background: linear-gradient(160deg, #2A1C08, var(--card) 70%); border: 1px solid #5A4318; border-radius: 20px; padding: 26px 22px; margin-top: 36px; }
+  .warn h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 22px; }
+  .warn p { color: var(--mut); margin-top: 10px; }
+  .btn { display: block; text-align: center; margin-top: 14px; padding: 16px; border-radius: 14px; font-weight: 800; font-size: 16px; text-decoration: none; }
+  .btn.gold-bg { background: linear-gradient(180deg, #F7DC94, #D9A94E); color: #1E1609; }
+  .btn.ghost { border: 1px solid rgba(243,210,126,.5); color: var(--txt); }
+  .foot { text-align: center; color: var(--mut); font-size: 13px; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <span class="pill"><i></i>Полный пошаговый план</span>
+    <h1>Контент <span class="gold">на автопилоте</span>: рилсы без съёмки</h1>
+    <p class="lead">Как устроена моя система: я не снимаю, не озвучиваю, не монтирую и не выкладываю — только нажимаю «ок» в Telegram. Ниже — всё, что для этого нужно, честно: сервисы, подписки, установка и подводные камни.</p>
+    <div class="flow"><span>сценарий</span><span>→ ваш голос</span><span>→ ваш аватар</span><span>→ монтаж</span><span>→ обложка</span><span>→ «ок» в Telegram</span><span>→ Instagram</span><span>→ ответы на комментарии</span></div>
+  </div>
+
+  <h3>Что понадобится и сколько стоит</h3>
+  <p class="muted">Цены — ориентир на момент написания, проверяйте на сайтах сервисов.</p>
+  <table>
+    <tr><th>Что</th><th>Зачем</th><th>Стоимость</th></tr>
+    <tr><td><b>Claude</b> (подписка + приложение Claude Code)</td><td>ИИ-сотрудник, который пишет сценарии, монтирует, собирает бота и всё связывает</td><td>от $20/мес (Pro); для больших объёмов — Max от $100</td></tr>
+    <tr><td><b>ElevenLabs</b>, тариф Creator</td><td>копия вашего голоса (профессиональная), озвучка, звуковые эффекты</td><td>≈ $22/мес</td></tr>
+    <tr><td><b>HeyGen</b>, тариф Creator или Pro</td><td>цифровой двойник: говорит вашим голосом, без водяных знаков, 1080p</td><td>≈ $29–49/мес</td></tr>
+    <tr><td><b>Компьютер</b> с Windows или Mac</td><td>на нём идёт монтаж (Remotion), распознавание речи, рендер</td><td>свой; лучше с видеокартой NVIDIA</td></tr>
+    <tr><td><b>Remotion</b></td><td>программный монтаж: графика, субтитры, переходы</td><td>бесплатно для частных лиц и небольших компаний (до 3 человек), иначе — платная лицензия</td></tr>
+    <tr><td><b>Node.js, ffmpeg, Whisper</b></td><td>среда для монтажа, обработка видео, распознавание речи для субтитров и проверки</td><td>бесплатно</td></tr>
+    <tr><td><b>Instagram</b> профессиональный аккаунт + <b>Meta for Developers</b></td><td>официальная публикация рилсов и ответы на комментарии</td><td>бесплатно</td></tr>
+    <tr><td><b>Telegram-бот</b> (@BotFather)</td><td>присылает вам ролик на подтверждение</td><td>бесплатно</td></tr>
+    <tr><td><b>Cloudflare Workers</b></td><td>«сервер», где живут боты: подтверждение, публикация, ответы на комментарии</td><td>бесплатно на старте</td></tr>
+    <tr><td><b>GitHub</b> (GitHub Pages)</td><td>публичная ссылка на видео и обложку — Instagram забирает ролик только по ссылке</td><td>бесплатно</td></tr>
+  </table>
+  <div class="total">Итого: ≈ $70–170 в месяц на сервисы + 2–4 недели на первую настройку, если делать самому.</div>
+
+  <h3>Пошагово</h3>
+
+  <div class="step"><span class="n">0</span>
+    <h2>Подготовка компьютера</h2>
+    <ol>
+      <li>Установите <b>приложение Claude</b> (вкладка Code — это Claude Code) и оформите подписку.</li>
+      <li>Установите <b>Node.js</b> (LTS) и <b>Git</b>, затем <b>ffmpeg</b>.</li>
+      <li>Создайте папку проекта и проект <b>Remotion</b>: <code>npx create-video@latest</code>.</li>
+      <li>Поставьте <b>Whisper</b> (whisper.cpp, модель large-v3-turbo) — он расшифровывает озвучку: по нему делаются субтитры по словам и проверяется, что ни одно слово не обрезано.</li>
+      <li>Попросите Claude создать для вас <b>навык (skill) монтажа</b>: правила вашего стиля, порядок смыслов в ролике, цвета, шрифты, звуки. Тогда каждый следующий ролик собирается одинаково хорошо.</li>
+    </ol>
+    <span class="tag">1–2 вечера</span>
+  </div>
+
+  <div class="step"><span class="n">1</span>
+    <h2>Ваш голос — копия в ElevenLabs</h2>
+    <ol>
+      <li>Тариф <b>Creator</b> (быстрая копия голоса доступна дешевле, но звучит заметно хуже).</li>
+      <li>Запишите <b>30–60 минут</b> речи на диктофон: часть читаете, часть рассказываете своими словами, с разными эмоциями. Тихая комната, телефон в 15–20 см ото рта, всё в одних условиях.</li>
+      <li>Voices → Add a new voice → <b>Professional Voice Clone</b> → загрузите файлы, подтвердите, что голос ваш (прочитаете фразу). Обучение — несколько часов.</li>
+      <li>Создайте <b>API-ключ</b> с правами Text to Speech, Voices (чтение), User (чтение) и Sound Effects — Claude будет озвучивать и делать звуки сам.</li>
+      <li>Проверьте модели: у меня похожим получился голос на <b>eleven_v4</b>.</li>
+    </ol>
+    <div class="note">Подводный камень: ударения и названия. Нейросеть может сказать «Кастанай» вместо «Костанай». Каждую озвучку прогоняйте через распознавание и слушайте проблемные слова.</div>
+  </div>
+
+  <div class="step"><span class="n">2</span>
+    <h2>Цифровой двойник — HeyGen</h2>
+    <ol>
+      <li>Нужен <b>платный тариф</b>: на бесплатном — водяные знаки по всему кадру, 720p и нельзя генерировать образы.</li>
+      <li>Загрузите своё фото (чёткое, свет на лице, нейтральный фон) — получите фото-аватара. Лучше ещё снять 2–5 минут видео для <b>цифрового двойника</b>: он даёт естественные движения.</li>
+      <li>Подключите HeyGen к Claude как <b>коннектор (MCP)</b>: claude.ai → Настройки → Connectors → добавить <code>https://mcp.heygen.com/mcp/v1/</code> и войти. Тогда Claude сам загружает озвучку и заказывает видео.</li>
+      <li>Видео делается так: ваша озвучка из ElevenLabs → аватар двигает губами под неё. Лучший результат у меня — движок <b>Avatar V</b> с двойником в качестве образца движений.</li>
+    </ol>
+    <div class="note">Подводный камень: не каждый образ похож на вас. Генерируйте несколько, оставляйте только те, где вы узнаваемы, иначе зрители чувствуют «не то».</div>
+  </div>
+
+  <div class="step"><span class="n">3</span>
+    <h2>Сценарий по формуле</h2>
+    <p>Схема, которая держит внимание: <b>цепляющее начало (2 сек) → кто вы и для кого → боль → решение → доказательство → призыв с ключевым словом</b>. Пишите живой речью, короткими фразами, 30–60 секунд. Числа и названия — так, как их надо произнести.</p>
+  </div>
+
+  <div class="step"><span class="n">4</span>
+    <h2>Монтаж в Remotion</h2>
+    <ol>
+      <li>Шаблон ролика: аватар на весь экран, над головой — графика <b>на каждый смысл</b> (то, что зритель слышит, он тут же видит).</li>
+      <li>Субтитры по словам с выделением ключевых — по таймингам из Whisper.</li>
+      <li>Переходы между смысловыми блоками, лёгкая музыка под голосом, звуковые эффекты (ElevenLabs Sound Effects).</li>
+      <li>Рендер 1080×1920, проверка кадров и финальная проверка звука распознаванием.</li>
+    </ol>
+    <span class="tag">с готовым шаблоном — 20–40 минут на ролик, почти без вашего участия</span>
+  </div>
+
+  <div class="step"><span class="n">5</span>
+    <h2>Обложка и описание</h2>
+    <p>Обложка — кадр в стиле вашего профиля (важное — в центре 1080×1440, иначе обрежется в сетке). Описание — короткое, с пользой и ключевым словом для комментариев.</p>
+  </div>
+
+  <div class="step"><span class="n">6</span>
+    <h2>Instagram API: доступ к публикации</h2>
+    <ol>
+      <li>Instagram переводится в <b>профессиональный аккаунт</b> (автор или бизнес).</li>
+      <li>На <b>developers.facebook.com</b> создаётся приложение со сценарием «Instagram API со входом через Instagram», добавляются права на публикацию контента, комментарии и сообщения.</li>
+      <li>Генерируется <b>токен</b> (живёт 60 дней) — его нужно <b>продлевать</b>, иначе через два месяца всё молча встанет. У меня бот продлевает его сам раз в неделю.</li>
+      <li>Видео и обложку Instagram берёт <b>только по публичной ссылке</b> — их выкладывают, например, на GitHub Pages.</li>
+    </ol>
+    <div class="note">Подводный камень: пока приложение Meta в режиме разработки, автоответы видят только вы и тестировщики. Чтобы бот отвечал всем, приложение проходит <b>проверку Meta</b> (App Review) — от нескольких дней до пары недель.</div>
+  </div>
+
+  <div class="step"><span class="n">7</span>
+    <h2>Telegram-бот: подтверждение → публикация</h2>
+    <ol>
+      <li>Создаёте бота в <b>@BotFather</b>, получаете токен.</li>
+      <li>Бот размещается на <b>Cloudflare Workers</b> (бесплатно) с базой данных.</li>
+      <li>Готовый ролик приходит вам: видео, обложка, текст и кнопки <b>✅ видео · ✅ обложка · ✅ текст</b>.</li>
+      <li>Когда всё ✅ — бот создаёт рилс в Instagram, ждёт, пока Instagram обработает видео (1–3 минуты), публикует и присылает вам ссылку.</li>
+    </ol>
+  </div>
+
+  <div class="step"><span class="n">8</span>
+    <h2>Ответы на ключевое слово</h2>
+    <p>Отдельный бот на Cloudflare получает от Meta уведомления о комментариях (webhook): человек пишет слово → бот отвечает в комментарии «отправил в директ» → в директе просит подписаться, <b>проверяет подписку</b> и выдаёт материал. Так рилс приводит подписчиков и заявки без вас.</p>
+  </div>
+
+  <div class="step"><span class="n">9</span>
+    <h2>Поток: каждый день</h2>
+    <p>Дальше рутина такая: вы даёте тему → Claude пишет сценарий → озвучивает → заказывает аватара → монтирует → делает обложку и текст → присылает в Telegram → вы нажимаете «ок» → рилс выходит. <b>Ваша часть — 1–2 минуты.</b></p>
+  </div>
+
+  <div class="warn">
+    <h2>Честно: собрать это самому — непросто</h2>
+    <p>Это 8–10 сервисов и программ, которые нужно связать между собой: голос, аватар, монтаж, токены Meta, проверка приложения, два бота, хостинг, продление токенов. У меня на первую настройку ушли недели — и много нюансов, которые всплывают только в процессе.</p>
+    <p><b style="color:var(--txt)">Хотите такую систему для себя под ключ — напишите мне, разберём ваш проект.</b> А если хотите сначала разобраться в ИИ для своего бизнеса — начните с практикума.</p>
+    <a class="btn gold-bg" href="https://t.me/ai_praktikum_kostanay_bot?start=ig_avatar">🚀 ИИ-практикум: онлайн или офлайн</a>
+    <a class="btn ghost" href="https://instagram.com/prosolenko.valeriy">💬 Обсудить систему под ключ</a>
+  </div>
+
+  <p class="foot">Валерий Просоленко · ИИ-автоматизация бизнеса · Костанай</p>
+</div>
+</body>
+</html>
