@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 фраз честного ИИ</title>
+<meta name="description" content="7 готовых фраз, после которых ChatGPT перестаёт поддакивать и говорит, где вы ошибаетесь.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0B0805; --card: #15100A; --line: #3A2C16; --txt: #F6EFE2; --mut: #B9AC93; --gold: #F3D27E; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--txt); font-family: 'Manrope', system-ui, sans-serif; line-height: 1.55; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 70px; }
+  .hero { text-align: center; padding: 48px 0 18px; }
+  h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(30px, 8vw, 44px); line-height: 1.08; }
+  .gold { background: linear-gradient(100deg, #8A5F22, #C9973F 22%, #F7DC94 45%, #FFF6DA 52%, #F7DC94 60%, #C9973F 80%, #8A5F22); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: var(--mut); font-size: 17px; margin-top: 14px; }
+  .how { background: var(--card); border: 1px solid #5A4318; border-radius: 18px; padding: 18px 20px; margin-top: 22px; color: var(--mut); }
+  .how b { color: var(--txt); }
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; margin-top: 14px; }
+  .item h2 { font-size: 17.5px; font-weight: 800; }
+  .item h2 i { font-style: normal; color: var(--gold); margin-right: 6px; }
+  .when { color: var(--mut); font-size: 14.5px; margin-top: 3px; }
+  .q { margin-top: 9px; padding: 12px 13px; border-radius: 12px; background: #221909; color: #FFF6E6; font-size: 15px; }
+  button { margin-top: 9px; width: 100%; min-height: 44px; border: 0; border-radius: 11px; background: linear-gradient(180deg, #F7DC94, #D9A94E); color: #1E1609; font: 800 15px 'Manrope', sans-serif; cursor: pointer; }
+  button.ok { background: #2E4A22; color: #D9F2C8; }
+  .note { margin-top: 26px; padding: 14px 16px; border-radius: 14px; background: #2A1508; border: 1px solid #5A2A12; color: #F2C9A8; font-size: 14.5px; }
+  .end { text-align: center; margin-top: 30px; color: var(--mut); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>7 фраз, после которых <span class="gold">ИИ перестаёт поддакивать</span></h1>
+    <p class="lead">Модели любят соглашаться. Эти фразы заставляют искать, где вы неправы.</p>
+  </div>
+  <div class="how"><b>Как пользоваться.</b> Опишите своими словами идею, текст или решение, затем скопируйте нужную фразу и вставьте её сразу после описания. Работает и в бесплатной версии ChatGPT.</div>
+  <div id="list"></div>
+  <p class="note">ИИ бывает неправ и когда хвалит, и когда критикует. Его ответ помогает думать, а решение остаётся за вами. В вопросах здоровья, права и крупных денег посоветуйтесь со специалистом.</p>
+  <p class="end">Валерий Просоленко · <a href="https://valeriy-ai-praktikum.pages.dev/?src=gift" style="color:var(--gold)">ИИ-практикум</a></p>
+</div>
+<script>
+const A = [
+  ["Адвокат дьявола", "Проверить идею, в которую вы уже влюбились", "Не хвали меня и не смягчай. Найди три самые серьёзные причины, почему это не сработает. Начни с самой опасной."],
+  ["Вскрытие провала", "Перед запуском, покупкой или переездом", "Представь, что прошёл год и это решение закончилось провалом. Опиши по шагам, что именно пошло не так и какой первый сигнал я пропустил."],
+  ["Проверка денег", "Когда цифры кажутся слишком красивыми", "Проверь мои расчёты как придирчивый финансист. Какие расходы я забыл, какие доходы завысил? Посчитай плохой, средний и хороший сценарий."],
+  ["Без лести к тексту", "Пост, резюме, коммерческое предложение, письмо", "Оцени этот текст строго, от 1 до 10, глазами занятого читателя, которому он не интересен. На каком месте он перестанет читать и почему? Перепиши только этот кусок."],
+  ["Другая сторона", "Спор, конфликт, сложный разговор", "Ты слышал только мою версию. Изложи сильнейшие аргументы другой стороны и скажи, в чём я, возможно, неправ. Не вставай на мою сторону, чтобы мне было приятно."],
+  ["Проверка уверенности", "Ответ ИИ звучит слишком гладко", "Отдели в своём ответе то, что точно знаешь, от того, что предполагаешь. Что из сказанного стоит проверить и где именно?"],
+  ["Честный наставник", "Вставьте в начале разговора, и ИИ будет спорить всю беседу", "В этом разговоре будь честным наставником. Не соглашайся, если не уверен. Если я ошибаюсь, говори прямо и объясняй почему. Не меняй мнение только из-за того, что я настаиваю: только если приведу новый аргумент."],
+];
+document.getElementById("list").innerHTML = A.map(([t, w, q], i) => `<div class="item"><h2><i>${i + 1}.</i>${t}</h2><div class="when">${w}</div><div class="q">${q}</div><button data-q="${q.replace(/"/g, "&quot;")}">Скопировать</button></div>`).join("");
+document.addEventListener("click", async (ev) => {
+  const b = ev.target.closest("button"); if (!b) return;
+  try { await navigator.clipboard.writeText(b.dataset.q); }
+  catch { const t = document.createElement("textarea"); t.value = b.dataset.q; document.body.append(t); t.select(); document.execCommand("copy"); t.remove(); }
+  b.textContent = "Скопировано ✓"; b.classList.add("ok");
+  setTimeout(() => { b.textContent = "Скопировать"; b.classList.remove("ok"); }, 1500);
+});
+</script>
+</body>
+</html>
