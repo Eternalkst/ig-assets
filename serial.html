@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как сделать ночной сериал</title>
+<meta name="description" content="Пошаговая инструкция: ночной сериал для рилс с выбором 1 или 2. Сюжет, сцены, озвучка и монтаж с готовыми промптами.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0B0805; --card: #15100A; --line: #3A2C16; --txt: #F6EFE2; --mut: #B9AC93; --gold: #F3D27E; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--txt); font-family: 'Manrope', system-ui, sans-serif; line-height: 1.55; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 70px; }
+  .hero { text-align: center; padding: 48px 0 18px; }
+  h1 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(30px, 8vw, 44px); line-height: 1.08; }
+  .gold { background: linear-gradient(100deg, #8A5F22, #C9973F 22%, #F7DC94 45%, #FFF6DA 52%, #F7DC94 60%, #C9973F 80%, #8A5F22); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: var(--mut); font-size: 17px; margin-top: 14px; }
+  h2 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 22px; margin: 34px 0 4px; }
+  .how { background: var(--card); border: 1px solid #5A4318; border-radius: 18px; padding: 18px 20px; margin-top: 22px; color: var(--mut); }
+  .how ol { padding-left: 20px; }
+  .how b { color: var(--txt); }
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 16px 14px; margin-top: 12px; }
+  .item h3 { font-size: 16.5px; font-weight: 800; }
+  .item h3 i { font-style: normal; color: var(--gold); margin-right: 6px; }
+  .q { margin-top: 8px; padding: 11px 13px; border-radius: 12px; background: #221909; color: #FFF6E6; font-size: 15px; }
+  button { margin-top: 9px; width: 100%; min-height: 44px; border: 0; border-radius: 11px; background: linear-gradient(180deg, #F7DC94, #D9A94E); color: #1E1609; font: 800 15px 'Manrope', sans-serif; cursor: pointer; }
+  button.ok { background: #2E4A22; color: #D9F2C8; }
+  .note { margin-top: 26px; padding: 14px 16px; border-radius: 14px; background: #2A1508; border: 1px solid #5A2A12; color: #F2C9A8; font-size: 14.5px; }
+  .end { text-align: center; margin-top: 30px; color: var(--mut); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>Ночной сериал <span class="gold">для рилс</span></h1>
+    <p class="lead">Как сделать серию на минуту, которую досматривают и комментируют: сюжет, сцены, озвучка и монтаж. Все промпты готовые.</p>
+  </div>
+  <div class="how">
+    <ol>
+      <li>Понадобятся <b>ChatGPT</b> (сюжет, сцены и картинки) и <b>CapCut</b> (озвучка и монтаж). Бесплатных версий хватит на первую серию.</li>
+      <li>Иди по шагам сверху вниз. Под каждым промптом кнопка «Скопировать».</li>
+      <li>В квадратных скобках подставь своё.</li>
+    </ol>
+  </div>
+  <h2>Почему такие серии смотрят</h2>
+  <div class="item"><h3><i>1.</i>Обычная вещь ведёт себя не так</h3><div class="q" style="background:none;padding:0;color:var(--mut)">Колонка, часы, лифт, перевод в банке. Это есть у каждого, поэтому страшно лично.</div></div>
+  <div class="item"><h3><i>2.</i>Первая фраза — правило</h3><div class="q" style="background:none;padding:0;color:var(--mut)">«Если ночью ... — не ...». Зритель сразу хочет узнать почему.</div></div>
+  <div class="item"><h3><i>3.</i>Деталь на 5-й секунде</h3><div class="q" style="background:none;padding:0;color:var(--mut)">Тень, слово, глаза в углу на полсекунды. В подписи: «Пересмотри пятую секунду». Ролик смотрят второй раз.</div></div>
+  <div class="item"><h3><i>4.</i>В конце не ответ, а выбор</h3><div class="q" style="background:none;padding:0;color:var(--mut)">Экран пополам: 1 или 2, «пиши в комментариях». Отсюда сотни комментариев.</div></div>
+  <div id="list"></div>
+  <p class="note">Не выдавай выдуманную историю за реальный случай и не пиши «вы выбрали», если люди не голосовали. Доверие дороже охвата.</p>
+  <div class="how" style="text-align:center">
+    <b>Хочешь сериал для своего бизнеса?</b><br>Полный гайд: как через сюжет продавать, с примерами серий и промптами.
+    <a href="https://t.me/ai_praktikum_kostanay_bot?start=serial_ig" style="display:block;margin-top:12px;padding:13px;border-radius:12px;background:linear-gradient(180deg,#F7DC94,#D9A94E);color:#1E1609;font-weight:800;text-decoration:none">Узнать про гайд в Telegram</a>
+  </div>
+  <p class="end">Валерий Просоленко · ИИ-практикум</p>
+</div>
+<script>
+const G = [
+  ["Шаг 1. Сюжет на 3 серии", [
+    ["🧠","Придумать историю","Придумай мистический мини-сериал для рилс из 3 серий по 50 секунд. Главный предмет: [обычная вещь из дома, например умные часы]. Правила: 1) серия начинается с фразы «Если ... — не ...»; 2) действие ночью, рассказ от второго лица («ты»); 3) каждые 5 секунд новая странная деталь; 4) на 5-й секунде спрятана маленькая подсказка; 5) каждая серия кончается выбором из двух действий, без ответа. Дай название и короткий пересказ каждой серии."],
+    ["✍️","Текст серии по фразам","Напиши текст первой серии: 11–12 коротких фраз, каждая не длиннее 12 слов, чтобы читать вслух. Последняя фраза: «Что сделаешь? Один: ... Два: ...». Под каждой фразой напиши, что показать на экране."],
+  ]],
+  ["Шаг 2. Картинки сцен", [
+    ["🎨","Единый стиль","Нарисуй вертикальную картинку 9:16 в стиле плоской векторной анимации: тёмная ночная комната, тёмно-синие и чёрные тона, золотой тёплый свет, простые формы без мелких деталей, без текста. Сцена: [описание сцены из шага 1]."],
+    ["🖼️","Следующие сцены в том же стиле","В том же стиле и тех же цветах нарисуй следующую сцену: [описание]. Персонаж и комната должны выглядеть так же, как на прошлой картинке."],
+  ]],
+  ["Шаг 3. Озвучка и монтаж в CapCut", [
+    ["🎙️","Озвучка","Вставь текст серии в CapCut: «Текст» → «Текст в речь», выбери спокойный мужской или женский голос. Или запиши своим голосом шёпотом: так страшнее."],
+    ["🎬","Сборка","Под каждую фразу поставь свою картинку на 3–5 секунд, добавь лёгкое приближение (анимация «Zoom in»), автоматические субтитры и тихий низкий звук на фон. В конце — экран из двух половин: 1 слева, 2 справа."],
+  ]],
+  ["Шаг 4. Обложка и подпись", [
+    ["📌","Обложка","Придумай 5 вариантов заголовка для обложки серии: 2 строки, до 4 слов в строке, интрига без ответа. Сюжет: [пересказ серии]."],
+    ["💬","Подпись под рилсом","Напиши подпись к рилсу: первая строка — правило «Если ... — ...», дальше 2 предложения сюжета, затем «Пересмотри пятую секунду 👀», выбор «1 — ..., 2 — ...» и «Пиши 1 или 2 в комментариях». В конце 5 хештегов."],
+  ]],
+];
+let n = 0;
+document.getElementById("list").innerHTML = G.map(([t, a]) => `<h2>${t}</h2>` + a.map(([e, s, q]) => `<div class="item"><h3><i>${++n}.</i>${e} ${s}</h3><div class="q">${q}</div><button data-q="${q.replace(/"/g, "&quot;")}">Скопировать</button></div>`).join("")).join("");
+document.addEventListener("click", async (ev) => {
+  const b = ev.target.closest("button"); if (!b) return;
+  try { await navigator.clipboard.writeText(b.dataset.q); }
+  catch { const t = document.createElement("textarea"); t.value = b.dataset.q; document.body.append(t); t.select(); document.execCommand("copy"); t.remove(); }
+  b.textContent = "Скопировано ✓"; b.classList.add("ok");
+  setTimeout(() => { b.textContent = "Скопировать"; b.classList.remove("ok"); }, 1500);
+});
+</script>
+</body>
+</html>
